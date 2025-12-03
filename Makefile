@@ -5,11 +5,11 @@ SRC=$(wildcard src/*.c) $(wildcard asm/*.S) boards/qemu-mps2/startup.S
 OUT=build/firmware.elf
 
 all:
-\tmkdir -p build
-\t$(TOOL)-gcc $(CFLAGS) $(LDFLAGS) -o $(OUT) $(SRC)
+	mkdir -p build
+	$(TOOL)-gcc $(CFLAGS) $(LDFLAGS) -o $(OUT) $(SRC)
 
 size:
-\t$(TOOL)-size $(OUT)
+	$(TOOL)-size $(OUT)
 
 clean:
-\trm -f $(OUT)
+	rm -f $(OUT)
